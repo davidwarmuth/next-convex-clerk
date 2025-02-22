@@ -4,8 +4,12 @@ import { ThemeProvider, useTheme } from "next-themes";
 import { Toaster } from "./ui/sonner";
 import { useEffect, useState } from "react";
 import { dark } from "@clerk/themes";
-import { ClerkProvider } from "@clerk/nextjs";
+import { ClerkProvider, useAuth } from "@clerk/nextjs";
 import { BaseThemeTaggedType } from "@clerk/types";
+import { ConvexProviderWithClerk } from "convex/react-clerk";
+import { ConvexReactClient } from "convex/react";
+
+const convex = new ConvexReactClient(process.env.NEXT_PUBLIC_CONVEX_URL!);
 
 export function Providers({
   children,
@@ -18,8 +22,10 @@ export function Providers({
       disableTransitionOnChange
     >
       <ThemedClerkProvider>
-        {children}
-        <ToasterProvider />
+        <ConvexProviderWithClerk client={convex} useAuth={useAuth}>
+          {children}
+          <ToasterProvider />
+        </ConvexProviderWithClerk>
       </ThemedClerkProvider>
     </ThemeProvider>
   );
