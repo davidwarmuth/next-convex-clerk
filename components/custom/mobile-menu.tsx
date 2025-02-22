@@ -24,7 +24,7 @@ export default function MobileMenu() {
         <div className="absolute top-16 left-0 w-full bg-background bg-opacity-100 z-50 border-b">
           <ul className="container flex flex-col gap-4 py-4">
             <li>
-              <Link href="#" className="text-lg font-medium">
+              <Link href="/link" className="text-lg font-medium">
                 Link
               </Link>
             </li>

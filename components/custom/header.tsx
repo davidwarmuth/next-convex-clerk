@@ -14,7 +14,7 @@ export function Header() {
           </h1>
           <ul className="hidden md:flex gap-10 text-sm font-medium">
             <li>
-              <Link href="#">Link</Link>
+              <Link href="/link">Link</Link>
             </li>
           </ul>
         </div>
