@@ -2,6 +2,7 @@ import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "./theme-toggle";
 import Link from "next/link";
+import MobileMenu from "./mobile-menu";
 
 export function Header() {
   return (
@@ -13,7 +14,7 @@ export function Header() {
           </h1>
           <ul className="hidden md:flex gap-10 text-sm font-medium">
             <li>
-              <Link href="/protected/server">Link</Link>
+              <Link href="#">Link</Link>
             </li>
           </ul>
         </div>
@@ -28,7 +29,9 @@ export function Header() {
             <UserButton />
           </SignedIn>
         </div>
-        <div className="md:hidden">mobile menu</div>
+        <div className="md:hidden">
+          <MobileMenu />
+        </div>
       </nav>
     </header>
   );
