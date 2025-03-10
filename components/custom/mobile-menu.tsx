@@ -2,19 +2,22 @@
 
 import { Menu, X } from "lucide-react";
 import { Button } from "../ui/button";
-import { useState } from "react";
 import Link from "next/link";
 import { Separator } from "../ui/separator";
 import { ThemeToggle } from "./theme-toggle";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 
-export default function MobileMenu() {
-  const [isOpen, setIsOpen] = useState(false);
+interface MobileMenuProps {
+  isOpen: boolean;
+  toggleMenu: () => void;
+  closeMenu: () => void;
+}
 
-  function toggleMenu() {
-    setIsOpen(!isOpen);
-  }
-
+export default function MobileMenu({
+  isOpen,
+  toggleMenu,
+  closeMenu,
+}: MobileMenuProps) {
   return (
     <div className="transition-all duration-500 ease-in-out">
       <Button variant="ghost" size="icon" onClick={toggleMenu}>
@@ -24,7 +27,11 @@ export default function MobileMenu() {
         <div className="absolute top-16 left-0 w-full bg-background bg-opacity-100 z-50 border-b">
           <ul className="container flex flex-col gap-4 py-4">
             <li>
-              <Link href="/tasks" className="text-lg font-medium">
+              <Link
+                href="/tasks"
+                className="text-lg font-medium"
+                onClick={closeMenu}
+              >
                 Tasks
               </Link>
             </li>
