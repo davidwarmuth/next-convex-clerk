@@ -56,14 +56,20 @@ export function TaskList() {
                   <Separator orientation="vertical" className="h-8 w-[2px]" />
                 </div>
                 <div className="hidden sm:grid grid-cols-[1fr,auto] items-center justify-center gap-3 w-20">
-                  <Badge variant="secondary" className="mx-auto">
+                  <Badge
+                    variant="secondary"
+                    className="mx-auto capitalize text-muted-foreground"
+                  >
                     {task.priority}
                   </Badge>
                   <Separator orientation="vertical" className="h-8 w-[2px]" />
                 </div>
                 <h4 className="ml-2">{task.title}</h4>
                 <div className="col-span-2 sm:grow flex items-center">
-                  <Badge variant="secondary" className="ml-1 flex sm:hidden">
+                  <Badge
+                    variant="secondary"
+                    className="ml-1 flex sm:hidden capitalize text-muted-foreground"
+                  >
                     {task.priority}
                   </Badge>
                   <TaskAction task={task} className="ml-auto" />
