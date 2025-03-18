@@ -21,6 +21,7 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { TaskForm } from "../forms/task-form";
+import { ListPlus } from "lucide-react";
 
 export function AddTask() {
   const [open, setOpen] = React.useState(false);
@@ -30,11 +31,14 @@ export function AddTask() {
     return (
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogTrigger asChild>
-          <Button variant="outline">Add</Button>
+          <Button variant="outline" className="text-md text-muted-foreground">
+            <ListPlus className="!size-5" />
+            Add
+          </Button>
         </DialogTrigger>
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
-            <DialogTitle>Add Tasks</DialogTitle>
+            <DialogTitle>Add Task</DialogTitle>
             <DialogDescription>
               Add a new task here. Click save to create the task.
             </DialogDescription>
@@ -48,7 +52,10 @@ export function AddTask() {
   return (
     <Drawer open={open} onOpenChange={setOpen}>
       <DrawerTrigger asChild>
-        <Button variant="outline">Add</Button>
+        <Button variant="outline" className="text-md text-muted-foreground">
+          <ListPlus className="!size-5" />
+          Add
+        </Button>
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader className="text-left">

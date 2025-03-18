@@ -20,7 +20,7 @@ export default function Tasks() {
 
     return (
       <section className="container">
-        <div className="flex gap-2">
+        <div className="flex gap-3">
           <h2 className="text-3xl font-bold">Tasks</h2>
           <AddTask />
         </div>
