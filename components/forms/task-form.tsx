@@ -259,6 +259,7 @@ export function TaskForm({
           <Button
             type="submit"
             className="gap-2"
+            variant="success"
             disabled={form.formState.isSubmitting}
           >
             {sending ? (

@@ -39,7 +39,7 @@ export function TaskList() {
                 key={task._id}
                 className="relative m-4 p-2 min-w-[170px] grid grid-cols-[auto,1fr] sm:flex gap-3 items-center border rounded-xl"
               >
-                <p className="absolute p-1 -translate-x-1/2 sm:-translate-x-full bg-background text-border rounded-lg">
+                <p className="absolute p-1 -translate-x-1/2 sm:-translate-x-full bg-background text-muted-foreground/40 rounded-lg">
                   {taskCount - index}
                 </p>
                 <div className="ml-1 flex items-center gap-3">
@@ -64,7 +64,9 @@ export function TaskList() {
                   </Badge>
                   <Separator orientation="vertical" className="h-8 w-[2px]" />
                 </div>
-                <h4 className="ml-2">{task.title}</h4>
+                <h4 className="ml-2 p-1 px-3 text-neutral-800 dark:text-neutral-300 font-semibold">
+                  {task.title}
+                </h4>
                 <div className="col-span-2 sm:grow flex items-center">
                   <Badge
                     variant="secondary"
